@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politica y Privacidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/ab3fe7d56f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <style>
+:root{
+    --primary-color: #9FC131;
+    --dark-color: #D6D58E; 
+    --text-color: #DEEFE7;
+    --background-color: #002333;
+}
+
+*{
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: #F0F1DF;
+    text-transform: capitalize;
+}
+
+/*LOGO*/
+
+header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    background-color: #159A9C;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 5px 2%;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*NAVBAR*/
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.header .nav-links li {
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+    color: #B4BEC9;
+}
+
+/*CONTENIDO*/
+
+.Contenido {
+    max-width: 90vw;
+    width: 100%;
+    margin: auto;
+}
+
+.TitulosTexto {
+    text-align: justify;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    max-width: 54rem;
+    margin-top: 100px;
+}
+
+.TitulosTexto h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.TitulosTexto p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/*FOOTER*/
+
+.Footer-top {
+    background-color: #159A9C;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: #159A9C;
+    padding: 50px 0;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.footer-links {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    color: #FFF;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-links ul {
+    padding: 0 10px 0 0;
+}
+
+.footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #DEEFE7;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #FFF;
+    padding-left: 6px;
+}
+
+.social-link a {
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #FFF;
+    transition: all .5s ease;
+}
+
+.social-link a:hover {
+    background-color: #00C3FF;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo freskitos.png" alt="logo de la marca">
+         
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>    
+    </header>
+
+    <section class="Contenido">
+        <div class="TitulosTexto">
+            <h1 class="TerminosCondiciones">POLITICA Y PRIVACIDAD</h1>
+            <p>
+                Freskito's se compromete a proteger su privacidad. Esta política de privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que usted nos
+                proporciona a través de nuestro sitio web. Al utilizar nuestro sitio web, usted acepta los términos y condiciones de esta política de privacidad.
+            </p>
+            <h1 class="InformacionEmpresa">1. INFORMACION QUE RECOPILAMOS</h1>
+            <p>
+                <li>Recopilamos información personal que usted nos proporciona voluntariamente, como su nombre, dirección, número de teléfono, dirección de correo electrónico
+                    y detalles de pago cuando realiza una compra en nuestro sitio web.</li>
+                <li>También recopilamos información no personal, como datos de navegación y cookies, para mejorar su experiencia en nuestro sitio web y comprender mejor las necesidades
+                    de nuestros clientes.</li>
+            </p>
+            <h1 class="UsoSitoWeb">2. USO DE LA INFORMACION RECOPILADA</h1>
+            <p>
+                <li>Utilizamos la información personal que usted nos proporciona para procesar sus pedidos, comunicarnos con usted sobre su pedido y proporcionarle información sobre nuestros productos y servicios.</li>
+                <li>No compartimos su información personal con terceros sin su consentimiento, excepto cuando sea necesario para procesar su pedido o cumplir con la ley.</li>
+                <li>Utilizamos información no personal, como datos de navegación y cookies, para mejorar nuestro sitio web, personalizar su experiencia de usuario y analizar tendencias de tráfico.</li>
+            </p>
+            <h1 class="ComprasPagos">3. SEGURIDAD DE LA INFORMACION</h1>
+            <p>
+                <li>Implementamos medidas de seguridad para proteger la información personal que usted nos proporciona contra pérdida, uso indebido, acceso no autorizado, divulgación, alteración o destrucción.</li>
+                <li>Utilizamos tecnologías de encriptación y prácticas de seguridad estándar de la industria para proteger su información durante la transmisión y el almacenamiento.</li>
+            </p>
+            <h1 class="EnviosEntrega">4. ACCESO Y CONTROL DE LA INFORMACION</h1>
+            <p>
+                <li>Usted tiene derecho a acceder, corregir, actualizar o eliminar su información personal en cualquier momento.</li>
+                <li>Si desea acceder, corregir, actualizar o eliminar su información personal, o si tiene alguna pregunta o inquietud sobre nuestra política de privacidad, por favor contáctenos a través de [correo electrónico o teléfono].</li>
+            </p>
+            <h1 class="DevolucionesReembolsos">5. COOKIES Y TECNOLOGIAS SIMILARES</h1>
+            <p>
+                <li>Utilizamos cookies y tecnologías similares para mejorar su experiencia en nuestro sitio web y comprender mejor cómo lo utiliza.</li>
+                <li>Puede configurar su navegador para rechazar todas las cookies o para indicar cuándo se está enviando una cookie. Sin embargo, si desactiva las cookies, es posible que algunas funciones de nuestro sitio web no estén disponibles.</li>
+            </p>
+            <h1 class="PrivacidadSeguridad">6. CAMBIOS EN ESTA POLITICA Y PROVACIDAD</h1>
+            <p>
+                <li>Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Cualquier cambio entrará en vigor inmediatamente después de su publicación en nuestro sitio web.</li>
+                <li>Le recomendamos que revise esta política de privacidad periódicamente para estar informado sobre cómo protegemos su información.</li>
+            </p>
+            <h1 class="Contacto">8. CONTACTO</h1>
+            <p>
+                Si tiene alguna pregunta o inquietud sobre estas politicas y privacidad, no dude en ponerse en contacto con nosotros a través de [correo electrónico o teléfono].
+            </p>
+            <p>
+                Al utilizar nuestro sitio web, usted acepta los términos y condiciones de esta política de privacidad. Si no está de acuerdo con estos términos y condiciones, le rogamos que no utilice nuestro sitio web.
+            </p>
+            <button type="button" class="btn btn-link">POLITICA Y PRIVACIDAD.PDF</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="Footer-top">
+            <p>&copy; 2024 Social Programmers. Todos los derechos reservados.</p>
+        </div>
+        <div class="container2">
+            <div class="footer-row">
+              <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                  <li><a href="Nosotros">Nosotros</a></li>
+                  <li><a href="TerminosCondiciones">Terminos y Condiciones</a></li>
+                  <li><a href="#">Politica y privacidad</a></li>
+                  <li><a href="https://www.sic.gov.co">Superintendencia de Industria y Comercio</a></li>
+                </ul>
+              </div>
+              <div class="footer-links">
+                <h4>Ayuda</h4>
+                <ul>
+                  <li><a href="AyudaPreguntas">Ayuda y Preguntas</a></li>
+                  <li><a href="contactanos">Contactanos</a></li>
+                </ul>
+              </div>
+              <div class="footer-links">
+                <h4>Siguenos</h4>
+                <div class="Social-link">
+                    <a href="https://www.facebook.com/?locale=es_LA"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/?hl=es-es"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/?lang=es"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/feed/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </footer>
+</body>
+</html>

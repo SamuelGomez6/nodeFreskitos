@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  align-content: center;
+  margin: 0;
+  position: relative;
+}
+
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-register {
+  width: 400px;
+  background: rgba(141, 232, 118, 0.9);
+  padding: 30px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #005C53;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #FFF;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: #FFF;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color: #FFF;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-register a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #005C53;
+  border: none;
+  padding: 12px;
+  color: #FFF;
+  margin: 16px 0;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+
+.botons:hover, .botons:focus, .botons:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+    </style>
+
+</head>
+<body>
+    
+  <div class="background-container">
+    <img src="fondo_registro.jpg" alt="Fondo Registro" class="background-image"/>
+  </div>
+
+  <form class="form-register" id="register-form" method="POST">
+      <h4>Formulario Registro</h4>
+            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
+            <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su Apellido">
+            <input class="controls" type="text" name="usuario" id="usuario" placeholder="Ingrese un Usuario">
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+            <input class="controls" type="text" name="direccion" id="direccion" placeholder="Ingrese su Direccion">
+            <input class="controls" type="number" name="edad" id="edad" placeholder="Ingrese su Edad">
+            <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese una Contraseña">
+        <a href="TerminosCondiciones">Terminos y Condiciones</a>
+            <button class="botons" type="submit">Registrar</button>
+        <p><a href="Login">¿Ya esats registrado? Iniciar sesion</a></p>
+    </form>
+
+    <script>
+      const form = document.getElementById('register-form');
+
+      form.addEventListener('submit', async (e) => {
+          e.preventDefault(); // Evitar la recarga de la página
+
+          const formData = new FormData(form);
+          const data = {
+              nombre: formData.get('nombre'),
+              apellido: formData.get('apellido'),
+              usuario: formData.get('usuario'),
+              correo: formData.get('correo'),
+              direccion: formData.get('direccion'),
+              edad: formData.get('edad'),
+              contraseña: formData.get('contraseña')
+          };
+
+          // Enviar datos al servidor
+          const response = await fetch('/Registro', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          // Mostrar alerta
+          if(result.success) {
+              Swal.fire({
+                  title: 'Registro exitoso',
+                  text: result.message,
+                  icon: 'success',
+                  timer: 3000,
+                  showConfirmButton: false
+              }).then(() => {
+                  window.location.href = '/index'; 
+              });
+          } else {
+              Swal.fire({
+                  title: 'Error',
+                  text: result.message,
+                  icon: 'error',
+                  showConfirmButton: true
+              });
+          }
+      });
+  </script>
+    
+    
+</body>
+</html>
