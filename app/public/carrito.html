@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ab3fe7d56f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<style>
+*{
+    font-size: 20px; 
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #F0F1DF;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/*LOGO*/
+
+header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    background-color: #159A9C;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 5px 2%;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*NAVBAR*/
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.header .nav-links li {
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+    color: #B4BEC9;
+}
+
+
+/*ICONS*/
+
+.container-user{
+    display: flex;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.container-user .fa-user{
+    font-size: 25px;
+    color: white;
+    padding-right: 5px;
+}
+
+.container-user .fa-cart-shopping{
+    font-size: 25px;
+    color: var(--text-color);
+    padding-left: 10px;
+}
+
+.container-user a {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all .50s ease;
+    text-decoration: none;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user i {
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+.space {
+    margin-top: 110px;
+}
+
+/*TABLA DE PRODUCTOS*/
+
+.cart-table {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.btn-order {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.btn-order button {
+    background-color: #159A9C;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-order button:hover {
+    background-color: #137a7b;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.table .text-right {
+    text-align: right;
+}
+
+.table .text-center {
+    text-align: center;
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-controls button {
+    background-color: #159A9C;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.quantity-controls input {
+    text-align: center;
+    width: 50px;
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.quantity-controls button:hover {
+    background-color: #137a7b;
+}
+
+</style>
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo freskitos.png" alt=""/>
+         
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/index">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>    
+  
+        <div class="container-user">
+            <a href="/Perfil" class="user"><i class="fa-solid fa-user"></i></a>
+            <a href="#" class="shopping"><i class="fa-solid fa-cart-shopping"></i></a> 
+        </div>
+    </header>
+
+    <div class="space"></div>
+
+    <div class="container cart-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-start">Nombre</th>
+                    <th class="text-center">Unidad</th>
+                    <th class="text-center">Eliminar</th>
+                    <th class="text-right">Precio</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Las filas se agregarán dinámicamente aquí -->
+            </tbody>            
+        </table>
+    
+        <div class="cart-total">
+            Total: $<span id="total-price">0</span>
+        </div>
+    
+        <div class="btn-order">
+            <button type="button" id="btn-ordenar" class="btn btn-success">Ordenar</button>
+        </div>
+    </div>
+    
+    <script>
+        // Función para obtener los productos del carrito desde el servidor
+        function loadCartItems() {
+            fetch('/cart-items')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Datos del carrito:', data); // Debugging aquí
+                    if (data.success) {
+                        const cartItems = data.cartItems;
+                        cartItems.forEach(product => {
+                            addProductToCart(product); // Agregar cada producto a la tabla
+                        });
+                    } else {
+                        console.error('Error al cargar los productos del carrito:', data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al hacer la solicitud:', error);
+                });
+        }
+    
+        // Llamamos a la función cuando la página se carga
+        document.addEventListener('DOMContentLoaded', loadCartItems);
+    
+        // Función para agregar un producto al carrito
+        function addProductToCart(product) {
+            const cartItems = document.getElementById('cart-items');
+            
+            // Crear una nueva fila para cada producto
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="text-start">${product.nombre_producto}</td>
+                <td class="text-center">
+                    <div class="quantity-controls">
+                        <button type="button" class="btn btn-minus" data-id="${product.product_id}">-</button>
+                        <input type="number" value="${product.cantidad}" min="1" data-id="${product.product_id}" readonly>
+                        <button type="button" class="btn btn-plus" data-id="${product.product_id}">+</button>
+                    </div>
+                </td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-close" data-id="${product.product_id}" aria-label="Close"></button>
+                </td>
+                <td class="text-right" data-price="${product.precio_producto}">$${(product.precio_producto * product.cantidad).toFixed(2)}</td>
+            `;
+            
+            cartItems.appendChild(row);
+            
+            document.querySelectorAll('.btn-plus, .btn-minus').forEach(button => {
+                button.addEventListener('click', handleQuantityAndUpdateServer);
+            });
+
+            row.querySelector('.btn-close').addEventListener('click', handleRemoveProduct);
+
+            updateCartTotal();
+        }
+    
+        // Función para eliminar un producto del carrito
+        function handleRemoveProduct(event) {
+            const button = event.target;
+            const row = button.closest('tr');
+            const productId = button.getAttribute('data-id');
+    
+            // Eliminar la fila del carrito
+            row.remove();
+    
+            // Realizar la solicitud al servidor para eliminar el producto del carrito en la base de datos
+            fetch(`/remove-from-cart/${productId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Producto eliminado del carrito:', data.message);
+                    // Actualizar el total
+                    updateCartTotal();
+                } else {
+                    console.error('Error al eliminar el producto:', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error al hacer la solicitud de eliminación:', error);
+            });
+        }
+    
+        //Función para actualizar el precio total por producto
+        function updateProductPrice(row) {
+            const priceElement = row.querySelector('td[data-price]');
+            const unitPrice = parseFloat(priceElement.getAttribute('data-price'));
+            const quantity = parseInt(row.querySelector('input[type="number"]').value);
+            
+            // Actualizamos el precio visible para el producto, manteniendo los decimales
+            priceElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
+        }
+    
+        // Función para actualizar el total del carrito
+        function updateCartTotal() {
+            let total = 0;
+            document.querySelectorAll('.table tbody tr').forEach(row => {
+                const unitPrice = parseFloat(row.querySelector('td[data-price]').getAttribute('data-price'));
+                const quantity = parseInt(row.querySelector('input[type="number"]').value);
+                total += unitPrice * quantity;
+            });
+    
+            // Actualizamos el total del carrito en la página, manteniendo los decimales
+            document.getElementById('total-price').textContent = `${total.toFixed(2)}`;
+        }
+    
+        // Función para manejar el cambio de cantidad y actualizar el servidor
+        function handleQuantityAndUpdateServer(event) {
+            const button = event.target;
+            const row = button.closest('tr');
+            const quantityInput = row.querySelector('input[type="number"]');
+            let currentQuantity = parseInt(quantityInput.value);
+            const productId = quantityInput.getAttribute('data-id');
+
+            // Actualizar la cantidad según el botón presionado
+            if (button.classList.contains('btn-plus')) {
+                currentQuantity += 1;
+            } else if (button.classList.contains('btn-minus') && currentQuantity > 1) {
+                currentQuantity -= 1;
+            }
+
+            quantityInput.value = currentQuantity;
+
+            updateProductPrice(row);
+            updateCartTotal();
+
+            // Sincronizar con el servidor
+            fetch('/update-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    productId: productId,
+                    quantity: currentQuantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Cantidad actualizada correctamente');
+                    updateCartTotal();
+                } else {
+                    console.error('Error al actualizar la cantidad');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+
+        document.getElementById('btn-ordenar').addEventListener('click', function() {
+            Swal.fire({
+                title: '¿Estás seguro de hacer este pedido?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Hacer pedido',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Hacer una petición POST al servidor para enviar el correo
+                    fetch('/enviar-correo-factura', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            console.log('Correo enviado exitosamente');
+                        } else {
+                            console.error('Error al enviar el correo');
+                        }
+                    }).catch(error => {
+                        console.error('Error en la petición para enviar el correo:', error);
+                    });
+
+                    // Redirigir a la página de la factura
+                    window.location.href = "/factura";
+                }
+            });
+        });
+    </script>
+    
+        
+
+</body>
+</html>

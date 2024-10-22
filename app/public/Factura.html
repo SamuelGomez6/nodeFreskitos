@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freskito's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ab3fe7d56f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<style>
+*{
+    font-size: 20px; 
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #F0F1DF;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/*LOGO*/
+
+header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    background-color: #159A9C;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 5px 2%;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*NAVBAR*/
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.header .nav-links li {
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+    color: #B4BEC9;
+}
+
+
+/*ICONS*/
+
+.container-user{
+    display: flex;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.container-user .fa-user{
+    font-size: 25px;
+    color: white;
+    padding-right: 5px;
+}
+
+.container-user .fa-cart-shopping{
+    font-size: 25px;
+    color: var(--text-color);
+    padding-left: 10px;
+}
+
+.container-user a {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all .50s ease;
+    text-decoration: none;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user i {
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+.space {
+    margin-top: 110px;
+}
+
+/*CONTENIDO*/
+
+.datos-factura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    margin-bottom: 25px;
+}
+
+.text-button {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+</style>
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo freskitos.png" alt=""/>
+         
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="/index">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>    
+  
+        <div class="container-user">
+            <a href="/Perfil" class="user"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    <div class="space"></div>
+
+    <div id="datos-factura" class="datos-factura"></div>
+
+    <div class="text-button">
+        <h5 class="text">¡GRACIAS POR COMPRAR EN FRESKITOS! TU PEDIDO LLEGARA MUY PRONTO</h5>
+        <button type="button" class="btn btn-outline-success" id="volver-inicio">Volver al inicio</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/factura-datos') 
+                .then(response => response.json())
+                .then(data => {
+                    const datosFacturaDiv = document.getElementById('datos-factura');
+
+                    if (datosFacturaDiv) {
+                        // Construir el contenido HTML
+                        const productosHTML = data.carrito.map(item => 
+                            `<li>${item.nombre_producto} - Cantidad: ${item.cantidad} - Precio: $${item.precio_producto}</li>`
+                        ).join('');
+
+                        const totalPagar = data.carrito.reduce((total, item) => total + (item.precio_producto * item.cantidad), 0);
+
+                        // Insertar datos en el div
+                        datosFacturaDiv.innerHTML = `
+                            <h2>Cliente: ${data.usuario.nombre} ${data.usuario.apellido}</h2>
+                            <p>Dirección: ${data.usuario.direccion}</p>
+                            <p>Correo: ${data.usuario.correo}</p>
+                            <h4>Tienda: ${data.tienda.nombre}</h4>
+                            <p>Dirección de la tienda: ${data.tienda.direccion}</p>
+                            <p>Teléfono de la tienda: ${data.tienda.telefono}</p>
+                            <p>Correo de la tienda: ${data.tienda.correo}</p>
+                            <h4>Productos Comprados:</h4>
+                            <ul>${productosHTML}</ul>
+                            <h4>Total a Pagar: $${totalPagar.toFixed(2)}</h4>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al obtener los datos de la factura:', error);
+                });
+        });
+
+        //Evento clic boton para volver al inicio
+        document.getElementById('volver-inicio').addEventListener('click', function() {
+            window.location.href = '/index'; 
+        });
+
+    </script>
+    
+
+</body>
+</html>

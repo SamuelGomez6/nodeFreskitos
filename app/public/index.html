@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/ab3fe7d56f.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
@@ -36,7 +37,6 @@
           
                 <div class="container-user">
                     <a href="/Login" class="user"><i class="fa-solid fa-user"></i>Inicia Sesion<br>Registrate</a>
-                    <a href="#" class="shopping"><i class="fa-solid fa-cart-shopping"></i></a> 
                 </div>
     </header>
 
@@ -51,165 +51,231 @@
 
       <h3>Frutas</h3>
 
-    <section class="product">
-      <div class="content">
-        <img src="sandia.jpg" class="card-img-top" alt="sandia"/>
-        <div class="card-body">
-          <h5 class="card-title">Sandia</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+      <section class="product">
+        <div class="content" class="product" data-id="1" data-name="sandia" data-price="3.980$">
+          <img src="sandia.jpg" class="card-img-top" alt="sandia"/>
+          <div class="card-body">
+            <h5 class="card-title">Sandia</h5>
+            <h6>$3.980$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="/fresa.jpg" class="card-img-top" alt="fresa"/>
-        <div class="card-body">
-          <h5 class="card-title">Fresa</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
-        </div>
-      </div>
-
-      <div class="content">
-        <img src="manzana.jpg" class="card-img-top" alt="manzana"/>
-        <div class="card-body">
-          <h5 class="card-title">Manzana</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
-        </div>
-      </div>
-
-      <div class="content">
-        <img src="pera.jpg" class="card-img-top" alt="pera"/>
-        <div class="card-body">
-          <h5 class="card-title">Pera</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
-        </div>
-      </div>
-
-      <div class="content">
-        <img src="uva.jpg" class="card-img-top" alt="uva"/>
-        <div class="card-body">
-          <h5 class="card-title">Uva</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
-        </div>
-      </div>
-    </section>
   
-      <h3>Verduras</h3>
+        <div class="content" class="product" data-id="2" data-name="fresa" data-price="8.580$">
+            <img src="/fresa.jpg" class="card-img-top" alt="fresa"/>
+          <div class="card-body" >
+            <h5 class="card-title">Fresa</h5>
+            <h6>$8.580$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
   
-    <section class="product">
-      <div class="content">
-          <img src="cebolla larga.jpg" class="card-img-top" alt="cebolla larga"/>
-        <div class="card-body">
-          <h5 class="card-title">Cebolla Larga</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+        <div class="content" class="product" data-id="3" data-name="manzana" data-price="8.940$">
+          <img src="manzana.jpg" class="card-img-top" alt="manzana"/>
+          <div class="card-body">
+            <h5 class="card-title">Manzana</h5>
+            <h6>$8.940$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="cebolla.jpg" class="card-img-top" alt="cebolla"/>
-        <div class="card-body">
-          <h5 class="card-title">Cebolla</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="4" data-name="pera" data-price="9.150$">
+          <img src="pera.jpg" class="card-img-top" alt="pera"/>
+          <div class="card-body">
+            <h5 class="card-title">Pera</h5>
+            <h6>$9.150$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="brocoli.jpg" class="card-img-top" alt="brocoli"/>
-        <div class="card-body">
-          <h5 class="card-title">Brocoli</h5> 
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="5" data-name="uva" data-price="13.400$">
+          <img src="uva.jpg" class="card-img-top" alt="uva"/>
+          <div class="card-body">
+            <h5 class="card-title">Uva</h5>
+            <h6>$13.400$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="lechuga.jpg" class="card-img-top" alt="lechuga"/>
-        <div class="card-body">
-          <h5 class="card-title">lechuga</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="6" data-name="mandarina" data-price="6.800$">
+          <img src="mandarina.jpg" class="card-img-top" alt="mandarina"/>
+          <div class="card-body">
+            <h5 class="card-title">Mandarina</h5>
+            <h6>$6.800$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="espinaca.jpeg" class="card-img-top" alt="espinaca"/>
-        <div class="card-body">
-          <h5 class="card-title">Espinaca</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="7" data-name="mango" data-price="7.890$">
+          <img src="mango.jpg" class="card-img-top" alt="mango"/>
+          <div class="card-body">
+            <h5 class="card-title">Mango</h5>
+            <h6>$7.890$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-    </section>
-
-      <h3>Granos</h3>
-
-    <section class="product">
-      <div class="content">
-          <img src="frijoles.jpg" class="card-img-top" alt="frijoles"/>
-        <div class="card-body">
-          <h5 class="card-title">Frijoles</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="8" data-name="granadilla" data-price="11.380$">
+          <img src="granadilla.jpg" class="card-img-top" alt="granadilla"/>
+          <div class="card-body">
+            <h5 class="card-title">Granadilla</h5>
+            <h6>$11.380$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="lentejas.jpg" class="card-img-top" alt="lentejas"/>
-        <div class="card-body">
-          <h5 class="card-title">lentejas</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+      </section>
+    
+        <h3>Verduras</h3>
+    
+      <section class="product">
+        <div class="content"  class="product" data-id="9" data-name="cebolla_larga" data-price="4.780$">
+            <img src="cebolla larga.jpg" class="card-img-top" alt="cebolla larga"/>
+          <div class="card-body">
+            <h5 class="card-title">Cebolla Larga</h5>
+            <h6>$4.780$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="maiz.jpg" class="card-img-top" alt="maiz"/>
-        <div class="card-body">
-          <h5 class="card-title">Maiz</h5> 
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="10" data-name="cebolla" data-price="1.780$">
+            <img src="cebolla.jpg" class="card-img-top" alt="cebolla"/>
+          <div class="card-body">
+            <h5 class="card-title">Cebolla</h5>
+            <h6>$1.780$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="arveja.jpg" class="card-img-top" alt="arveja"/>
-        <div class="card-body">
-          <h5 class="card-title">Arveja</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="11" data-name="brocoli" data-price="6.980$">
+            <img src="brocoli.jpg" class="card-img-top" alt="brocoli"/>
+          <div class="card-body">
+            <h5 class="card-title">Brocoli</h5> 
+            <h6>$6.980$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="content">
-          <img src="arroz.jpg" class="card-img-top" alt="arroz"/>
-        <div class="card-body">
-          <h5 class="card-title">Arroz</h5>
-          <p>Kilos</p>
-          <h6>$0.00$</h6>
-          <button class="boutton_add">Agregar</button>
+  
+        <div class="content" class="product" data-id="12" data-name="lechuga" data-price="8.420$">
+            <img src="lechuga.jpg" class="card-img-top" alt="lechuga"/>
+          <div class="card-body">
+            <h5 class="card-title">lechuga</h5>
+            <h6>$8.420$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
         </div>
-      </div>
-    </section>
+  
+        <div class="content" class="product" data-id="13" data-name="espinaca" data-price="2.600$">
+            <img src="espinaca.jpeg" class="card-img-top" alt="espinaca"/>
+          <div class="card-body">
+            <h5 class="card-title">Espinaca</h5>
+            <h6>$2.600$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="14" data-name="repollo" data-price="2.980$">
+            <img src="repollo.jpg" class="card-img-top" alt="repollo"/>
+          <div class="card-body">
+            <h5 class="card-title">Repollo</h5>
+            <h6>$2.980$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="15" data-name="aceitunas" data-price="4.150$">
+          <img src="aceitunas.jpg" class="card-img-top" alt="aceitunas"/>
+          <div class="card-body">
+            <h5 class="card-title">Aceitunas</h5>
+            <h6>$4.150$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="16" data-name="remolacha" data-price="4.600$">
+          <img src="remolacha.jpg" class="card-img-top" alt="remolacha"/>
+          <div class="card-body">
+            <h5 class="card-title">Remolacha</h5>
+            <h6>$4.600$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+      </section>
+  
+        <h3>Granos</h3>
+  
+      <section class="product" class="product" data-id="17" data-name="frijoles" data-price="3.500$">
+        <div class="content">
+            <img src="frijoles.jpg" class="card-img-top" alt="frijoles"/>
+          <div class="card-body">
+            <h5 class="card-title">Frijoles</h5>
+            <h6>$3.500$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="18" data-name="lentejas" data-price="3.950$">
+            <img src="lentejas.jpg" class="card-img-top" alt="lentejas"/>
+          <div class="card-body">
+            <h5 class="card-title">lentejas</h5>
+            <h6>$3.950$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="19" data-name="maiz" data-price="9.590$">
+            <img src="maiz.jpg" class="card-img-top" alt="maiz"/>
+          <div class="card-body">
+            <h5 class="card-title">Maiz</h5> 
+            <h6>$9.590$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="20" data-name="arveja" data-price="5.990$">
+            <img src="arveja.jpg" class="card-img-top" alt="arveja"/>
+          <div class="card-body">
+            <h5 class="card-title">Arveja</h5>
+            <h6>$5.990$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="21" data-name="arroz" data-price="10.950$">
+            <img src="arroz.jpg" class="card-img-top" alt="arroz"/>
+          <div class="card-body">
+            <h5 class="card-title">Arroz</h5>
+            <h6>$10.950$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="22" data-name="trigo" data-price="4.100$">
+            <img src="trigo.jpg" class="card-img-top" alt="trigo"/>
+          <div class="card-body">
+            <h5 class="card-title">Trigo</h5>
+            <h6>$4.100$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="23" data-name="arroz_integral" data-price="11.990$">
+          <img src="arroz_integral.jpg" class="card-img-top" alt="arroz_integral"/>
+          <div class="card-body">
+            <h5 class="card-title">Arroz_integral</h5>
+            <h6>$11.990$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+  
+        <div class="content" class="product" data-id="24" data-name="caraotas" data-price="3.550$">
+          <img src="caraotas.jpg" class="card-img-top" alt="caraotas"/>
+          <div class="card-body">
+            <h5 class="card-title">Caraotas</h5>
+            <h6>$3.550$</h6>
+            <button class="boutton_add add-to-cart">Agregar</button>
+          </div>
+        </div>
+      </section>
   </div>
 
     <footer class="footer">
@@ -244,5 +310,21 @@
       </div>
     </footer>
   
+    <script>
+      // Seleccionar todos los botones de agregar
+      document.querySelectorAll('.boutton_add').forEach(button => {
+          button.addEventListener('click', function() {
+              // Mostrar la alerta de advertencia
+              Swal.fire({
+                  icon: 'warning',
+                  title: 'Registrate primero',
+                  text: 'Para poder ordenar artículos',
+                  timer: 2500,  // Duración de 2 segundos
+                  showConfirmButton: false
+              });
+          });
+      });
+  </script>  
+
 </body>
 </html>
